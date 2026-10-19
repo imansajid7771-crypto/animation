@@ -1,0 +1,139 @@
+
+body{
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+    overflow: hidden;
+    color: aliceblue;
+   /* height: 600px; */
+} 
+   body.mode {
+     background: #0d1117;
+      color: white; }
+
+.box{
+    background-color: #1c1f2b;
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 5%;
+    
+}
+@property --angle{
+    syntax:"<angle>";
+    initial-value:0deg;
+    inherits: false;
+}
+.box::after,.box::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(from var(--angle),red,blue,purple,red);
+   
+    top:50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 20px;
+    animation: 3s spin linear infinite;
+}
+.box::before{
+    filter: blur(30px);
+}
+@keyframes spin{
+    from{
+        --angle:0deg;
+    }
+    to{
+        --angle:360deg;
+    }
+}
+/* .box1{
+    background-color: aliceblue;
+    height:100px;
+    width: 200px;
+    border: 2px solid black;
+}  */
+  .box1{
+    background-color: #1c1f2b;
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border-radius: 20px;
+    position: relative;
+    margin-top: 5%;
+    
+}
+@property --angle{
+    syntax:"<angle>";
+    initial-value:0deg;
+    inherits: false;
+}
+.box1::after,.box1::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(from var(--angle),transparent 80%,rgb(0, 204, 255));
+   
+    top:50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 20px;
+    animation: 3s spin linear infinite;
+}
+.box1::before{
+    filter: blur(30px);
+}
+@keyframes spin{
+    from{
+        --angle:0deg;
+    }
+    to{
+        --angle:360deg;
+    }
+}
+/* .box1{
+    background-color: aliceblue;
+    height:100px;
+    width: 200px;
+    border: 2px solid black;
+}  */
+.mode1{
+   height: 35px;
+   width: 100px;
+   border: 1px solid black;
+   background-color: #1c1f2b;
+   color: antiquewhite;
+   border-radius: 20px;
+   position: relative;
+}
+.mode1::after,.mode1::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(from var(--angle),rgb(218, 218, 17),rgb(0, 204, 255),rgb(253, 123, 145),rgb(86, 237, 186),rgb(255, 149, 56));
+   
+    top:50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 20px;
+    animation: 3s spin linear infinite;
+}
+.mode1::before{
+    filter: blur(30px);
+}
